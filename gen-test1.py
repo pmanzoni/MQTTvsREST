@@ -9,7 +9,7 @@ from mininet.log import setLogLevel
 import timeit, numpy
 
 TOT_NODES = 2
-TEST_REPS = 5
+TEST_REPS = 10
 
 SERVER_CODE = 'sudo mosquitto &'
 # SERVER_CODE = 'python rest_srv.py &'
@@ -64,5 +64,5 @@ def perfTest( banwid=10, tdelay='50ms', tloss=0):
 if __name__ == '__main__':
 #    setLogLevel( 'info' )
     print "PMDEBUG exp setup: ccode='{}', scode='{}', TOT_NODES={}, TEST_REPS={}".format(CLIENT_CODE, SERVER_CODE, TOT_NODES, TEST_REPS)
-    for i in [0, 5, 10, 40]: 
+    for i in [0]: 
         perfTest( banwid=1, tdelay='50ms', tloss=i)

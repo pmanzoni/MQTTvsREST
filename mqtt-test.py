@@ -34,7 +34,7 @@ if __name__ == '__main__':
 	mqttc.on_subscribe = on_subscribe
 
 	mqttc.connect(broker_add, 1883, keepalive=60)
-	mqttc.subscribe(sensor_name, 1)
+	mqttc.subscribe(sensor_name, 0)
 
 	new_s_value = random.randint(1, 1000)
 	new_sensor_t = {'value': str(new_s_value)}
