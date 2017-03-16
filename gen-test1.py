@@ -8,14 +8,16 @@ from mininet.util import dumpNodeConnections
 from mininet.log import setLogLevel
 import timeit, numpy
 
-TOT_NODES = 2
+TOT_NODES = 10
 TEST_REPS = 10
 
+# the last one is the one that will be executed
+SERVER_CODE = 'python rest_srv.py &'
 SERVER_CODE = 'sudo mosquitto &'
-# SERVER_CODE = 'python rest_srv.py &'
 
+# the last one is the one that will be executed
+CLIENT_CODE = 'python rest_cli.py'
 CLIENT_CODE = 'python mqtt-test.py'
-# CLIENT_CODE = 'python rest_cli.py'
 
 class SingleSwitchTopo( Topo ):
     "Single switch connected to n hosts."
